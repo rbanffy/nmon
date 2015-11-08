@@ -1,7 +1,7 @@
 # NOTE: link the curent working copy of the code to lmon.c for compiling
 CFLAGS=-g -O3 -D JFS -D GETUSER -Wall -D LARGEMEM -lm
 # CFLAGS=-g -O2 -D JFS -D GETUSER -Wall -D POWER
-#CFLAGS=-g -D JFS -D GETUSER 
+#CFLAGS=-g -D JFS -D GETUSER
 LDFLAGS=-lncurses -g
 FILE=lmon.c
 
@@ -12,16 +12,16 @@ nmon_power_rhel4: $(FILE)
 	gcc -o nmon_power_rhel4 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER
 
 nmon_power_sles12: $(FILE)
-	cc -o nmon_power_sles12 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18 
+	cc -o nmon_power_sles12 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18
 
 nmon_power_sles113: $(FILE)
 	cc -o nmon_power_sles113 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18 -D SLES113
 
 nmon_power_sles112: $(FILE)
-	cc -o nmon_power_sles112 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18 
+	cc -o nmon_power_sles112 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18
 
 nmon_power_sles11: $(FILE)
-	cc -o nmon_power_sles11 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18 
+	cc -o nmon_power_sles11 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER -D KERNEL_2_6_18
 
 nmon_power_sles10: $(FILE)
 	cc -o nmon_power_sles10 $(FILE) $(CFLAGS) $(LDFLAGS) -D POWER
@@ -100,22 +100,22 @@ nmon_x86_rhel2:
 nmon_x86_debian3:  $(FILE)
 	cc -o nmon_x86_debian3 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_fedora10: 
+nmon_x86_fedora10:
 	cc -s -o nmon_x86_fedora10 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_64_fedora10: 
+nmon_x86_64_fedora10:
 	cc -s -o nmon_x86_64_fedora10 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_ubuntu810: 
+nmon_x86_ubuntu810:
 	cc -o nmon_x86_ubuntu810 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_64_ubuntu810: 
+nmon_x86_64_ubuntu810:
 	cc -o nmon_x86_64_ubuntu810 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_64_ubuntu910: 
+nmon_x86_64_ubuntu910:
 	cc -o nmon_x86_64_ubuntu910 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
-nmon_x86_ubuntu910: 
+nmon_x86_ubuntu910:
 	cc -o nmon_x86_ubuntu910 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
 nmon_x86_ubuntu134: lmon.c
@@ -126,6 +126,9 @@ nmon_x86_ubuntu1410: lmon.c
 
 nmon_x86_ubuntu1504: lmon.c
 	cc -o nmon_x86_ubuntu1504 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
+
+nmon_x86_ubuntu1510: lmon.c
+	cc -o nmon_x86_ubuntu1510 $(FILE) $(CFLAGS) $(LDFLAGS) -D X86
 
 steal: lmon15c_stealing.c
 	cc -o nmon15cs lmon15c_stealing.c $(CFLAGS) $(LDFLAGS) -D X86
